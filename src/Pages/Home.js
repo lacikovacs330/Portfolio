@@ -3,8 +3,8 @@ import Main from '../Images/Main.png';
 
 function Home() {
   return (
-    <section className="bg-gray-200 h-[100vh] flex justify-center items-center">
-      <div className="page-wrapper w-full flex flex-col lg:flex-row justify-center items-center h-full">
+    <section id="home" className="bg-gray-200 h-[100vh] flex justify-center items-center">
+      <div className="container mx-auto page-wrapper w-full flex flex-col lg:flex-row justify-center items-center h-full">
         
         <div className="text-center lg:w-full opacity-0 animate-fade-in-delay transition-opacity duration-500 delay-500">
           <h1 className="text-5xl font-bold text-gray-800">Frontend Developer</h1>

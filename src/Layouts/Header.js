@@ -1,11 +1,10 @@
-import React, { useState ,useEffect , useRef } from 'react';
+import React, { useState ,useEffect } from 'react';
 import Logo from '../Images/Logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const navRef = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
@@ -25,21 +24,32 @@ function Header() {
     };
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const section = document.querySelector(sectionId);
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'auto',
+        block: 'start' 
+      });
+    }
+  };
+  
+
   return (
-    <header className="bg-gray-200 w-full h-[10vh] top-0 left-0 z-50 shadow-md fixed" style={{ backgroundColor: isScrolled ? 'rgba(229, 231, 235, 0.5)' : 'rgba(229, 231, 235, 1)' }}>
-      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-full">
+    <header className="bg-gray-200 w-full h-[10vh] top-0 left-0 z-50 shadow-md fixed" style={{ backgroundColor: isScrolled ? 'rgba(229, 231, 235, 0.9)' : 'rgba(229, 231, 235, 1)' }}>
+      <div className="container mx-auto page-wrapper flex justify-around lg:justify-between items-center h-full">
 
         <div className="flex justify-center items-center animate-fade-in">
           <img src={Logo} alt="Logo" className="w-9 h-9" />
         </div>
 
-        <nav ref={navRef} className={`hidden lg:flex justify-center items-center w-1/2 animate-fade-in`}>
-          <ul className="flex uppercase space-x-6">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#github">GITHUB</a></li>
+        <nav className={`hidden lg:flex justify-center items-center w-1/2 animate-fade-in`}>
+          <ul className="flex uppercase space-x-6 ">
+            <li><a href="#home" onClick={() => scrollToSection('#home')} className="text-gray-500 hover:text-black transition-colors duration-300">HOME</a></li>
+            <li><a href="#about"onClick={() => scrollToSection('#about')} className="text-gray-500 hover:text-black transition-colors duration-300">ABOUT</a></li>
+            <li><a href="#skills" className="text-gray-500 hover:text-black transition-colors duration-300">SKILLS</a></li>
+            <li><a href="#projects" className="text-gray-500 hover:text-black transition-colors duration-300">PROJECTS</a></li>
+            <li><a href="#github" className="text-gray-500 hover:text-black transition-colors duration-300">GITHUB</a></li>
           </ul>
         </nav>
 
@@ -54,7 +64,7 @@ function Header() {
         </div>
       </div>
 
-      <nav className={`lg:hidden absolute inset-x-0 bg-gray-200 z-50 transition-all duration-500 ease-in-out`} style={{maxHeight: '500px', overflow: 'hidden', opacity: isOpen ? 1 : 0, backgroundColor: isScrolled ? 'rgba(229, 231, 235, 0.5)' : 'rgba(229, 231, 235, 1)' }}
+      <nav className={`lg:hidden absolute inset-x-0 bg-gray-200 z-50 transition-all duration-500 ease-in-out`} style={{maxHeight: '500px', overflow: 'hidden', opacity: isOpen ? 1 : 0, backgroundColor: isScrolled ? 'rgba(229, 231, 235, 0.9)' : 'rgba(229, 231, 235, 1)' }}
 >        <ul className="flex flex-col w-full items-center justify-center">
           <li className='mt-2 mb-2'><a href="#home">HOME</a></li>
           <li className='mt-2 mb-2'><a href="#about">ABOUT</a></li>

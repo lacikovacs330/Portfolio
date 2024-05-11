@@ -21,6 +21,10 @@ module.exports = {
         'fade-in': 'fadeIn 0.5s ease-in-out forwards',
         'fade-in-delay': 'fadeIn 0.5s ease-in-out 0.5s forwards',
       },
+
+      boxShadow: {
+        "main" : "0px 8px 24px rgba(149,157,165, 0.2)",
+      }
     },
   },
   plugins: [],
