@@ -3,7 +3,7 @@ import Main from '../Images/Main.png';
 
 function Home() {
   return (
-    <section id="home" className="bg-gray-200 h-[100vh] flex justify-center items-center">
+    <main id="home" className="bg-gray-200 h-[100vh] flex justify-center items-center">
       <div className="container mx-auto page-wrapper w-full flex flex-col lg:flex-row justify-center items-center h-full">
         
         <div className="text-center lg:w-full opacity-0 animate-fade-in-delay transition-opacity duration-500 delay-500">
@@ -18,7 +18,7 @@ function Home() {
         </div>
 
       </div>
-    </section>
+    </main>
   );
 }
 
