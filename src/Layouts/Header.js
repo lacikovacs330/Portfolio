@@ -1,28 +1,14 @@
-import React, { useState ,useEffect } from 'react';
+import React, { useState } from 'react';
 import Logo from '../Images/Logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 0);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const scrollToSection = (sectionId) => {
     const section = document.querySelector(sectionId);
@@ -36,7 +22,7 @@ function Header() {
   
 
   return (
-    <header className="bg-gray-200 w-full h-[10vh] top-0 left-0 z-50 shadow-md fixed" style={{ backgroundColor: isScrolled ? 'rgba(229, 231, 235, 0.9)' : 'rgba(229, 231, 235, 1)' }}>
+    <header className="bg-gray-200 w-full h-[10vh] top-0 left-0 z-50 shadow-md ">
       <div className="container mx-auto page-wrapper flex justify-around lg:justify-between items-center h-full">
 
         <div className="flex justify-center items-center animate-fade-in">
@@ -64,8 +50,8 @@ function Header() {
         </div>
       </div>
 
-      <nav className={`lg:hidden absolute inset-x-0 bg-gray-200 z-50 transition-all duration-500 ease-in-out`} style={{maxHeight: '500px', overflow: 'hidden', opacity: isOpen ? 1 : 0, backgroundColor: isScrolled ? 'rgba(229, 231, 235, 0.9)' : 'rgba(229, 231, 235, 1)' }}
->        <ul className="flex flex-col w-full items-center justify-center">
+      <nav className={`lg:hidden absolute inset-x-0 bg-gray-200 z-50 transition-all duration-500 ease-in-out`} style={{maxHeight: '500px', overflow: 'hidden', opacity: isOpen ? 1 : 0,}}>
+        <ul className="flex flex-col w-full items-center justify-center">
           <li className='mt-2 mb-2'><a href="#home">HOME</a></li>
           <li className='mt-2 mb-2'><a href="#about">ABOUT</a></li>
           <li className='mt-2 mb-2'><a href="#skills">SKILLS</a></li>
