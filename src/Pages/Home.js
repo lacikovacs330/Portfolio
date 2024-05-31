@@ -1,48 +1,27 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Main from '../Images/Main.png';
+import React, { useRef } from 'react';
+import CV from "../Files/CV.pdf";
 
 function Home() {
-  const [isVisible, setIsVisible] = useState(false);
   const homeRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.5 } 
-    );
-
-    const currentHomeRef = homeRef.current;
-
-    if (currentHomeRef) {
-      observer.observe(currentHomeRef);
-    }
-
-    return () => {
-      if (currentHomeRef) {
-        observer.unobserve(currentHomeRef);
-      }
-    };
-  }, []); 
-
   return (
-    <main id="home" className="bg-gray-200 h-[100vh] flex justify-center items-center" ref={homeRef} >
-      <div className="container mx-auto opacity-0 transition-opacity duration-500" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s ease-in-out' }}>
-        <div className="page-wrapper w-full flex flex-col lg:flex-row justify-center items-center h-full">
-          <div className="text-center lg:w-full">
-            <h1 className="text-5xl font-bold text-gray-800 opacity-0 animate-fade-in-delay transition-opacity duration-500 delay-500" style={{ opacity: isVisible ? 1 : 0 }}>
+    <main id="home" className="bg-black h-[100vh] flex justify-center items-center relative" ref={homeRef}>
+      <div className="container page-wrapper mx-auto">
+      <div className="w-full h-full flex justify-center items-center text-center flex-col ">
+          <h1 className="text-5xl font-bold text-gray-800 z-10 text-white">
               Frontend Developer
             </h1>
-            <p className="text-2xl mt-2 font-bold text-gray-800 opacity-0 animate-fade-in-delay transition-opacity duration-500 delay-500" style={{ opacity: isVisible ? 1 : 0 }}>
+            <p className="text-2xl mt-2 font-bold text-gray-800 z-10 text-white">
               "Your website, our passion."
             </p>
-          </div>
-
-          <div className="lg:w-full flex justify-center items-center mt-4 lg:mt-0">
-            <div className="w-64 h-64 rounded-full overflow-hidden flex justify-center items-center bg-black opacity-0 animate-fade-in-delay transition-opacity duration-500 delay-500" style={{ opacity: isVisible ? 1 : 0 }}>
-              <img src={Main} alt="Main" className="w-40" />
-            </div>
+            <a href={CV} download className="z-10 mt-2 px-4 py-2 border-2 border-white hover:border-white text-white rounded-xl transition duration-300 hover:bg-black hover:text-white">Download CV</a>
+        </div>
+        <div className="w-full h-full">
+          <div className="absolute w-full h-[70vh] bottom-10 left-0" style={{ 
+            background: 'linear-gradient(to right, #ff7e5f, #feb47b)',
+            borderRadius: '50% 50% 0 0',
+            filter: 'blur(40px)'
+          }}>
           </div>
         </div>
       </div>
