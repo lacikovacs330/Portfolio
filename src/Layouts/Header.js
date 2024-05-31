@@ -39,15 +39,15 @@ function Header() {
 
         <nav className={`hidden lg:flex justify-center items-center w-1/2 animate-fade-in`}>
           <ul className="flex uppercase space-x-6 ">
-            <li><a href="#home" onClick={() => scrollToSection('#home')} className="text-white hover:text-white transition-colors duration-300">HOME</a></li>
-            <li><a href="#about" onClick={() => scrollToSection('#about')} className="text-white hover:text-white transition-colors duration-300">ABOUT</a></li>
-            <li><a href="#skills" className="text-white hover:text-white transition-colors duration-300">SKILLS</a></li>
-            <li><a href="#projects" className="text-white hover:text-white transition-colors duration-300">PROJECTS</a></li>
+            <li><a href="#home" onClick={() => scrollToSection('#home')} className="text-white hover:text-white transition-colors duration-300 hover:text-gray-400">HOME</a></li>
+            <li><a href="#about" onClick={() => scrollToSection('#about')} className="text-white hover:text-white transition-colors duration-300 hover:text-gray-400">ABOUT</a></li>
+            <li><a href="#skills" className="text-white hover:text-white transition-colors duration-300 hover:text-gray-400">SKILLS</a></li>
+            <li><a href="#projects" className="text-white hover:text-white transition-colors duration-300 hover:text-gray-400">PROJECTS</a></li>
           </ul>
         </nav>
 
         <div className="hidden lg:flex justify-center items-center animate-fade-in">
-          <a href="#contact" onClick={toggleContactPopup} className="px-4 py-2 border-2 border-white hover:border-white text-white rounded-xl transition duration-300 hover:bg-black hover:text-white">Contact</a>
+          <a href="#contact" onClick={toggleContactPopup} className="px-4 py-2 border-2 border-white hover:border-gray-400 text-white rounded-xl transition duration-300 hover:bg-black hover:text-white hover:text-gray-400">Contact</a>
         </div>
 
         <div className="block lg:hidden">
@@ -73,7 +73,7 @@ function Header() {
                 <a href="tel:+36205794154"><button type="button" class="w-full text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">+36205794154</button></a>
               </div>
             </div>
-            <button className="bg-black text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors duration-300" onClick={toggleContactPopup}>Close</button>
+            <button className="bg-black text-white px-4 py-2 rounded-md" onClick={toggleContactPopup}>Close</button>
           </div>
         </div>
       )}

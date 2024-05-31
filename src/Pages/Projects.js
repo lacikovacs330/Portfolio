@@ -75,7 +75,7 @@ function Projects() {
             </Swiper>
             <div className="w-full flex flex-col justify-center items-center my-20 text-white">
               <h2 className="mb-2">If you want more, click the GITHUB button</h2>
-              <a href="https://github.com/lacikovacs330" className="w-[120px] flex justify-between items-center px-2 py-2 border-2 border-white text-white rounded-xl">
+              <a href="https://github.com/lacikovacs330" className="w-[120px] flex justify-between items-center transition duration-300 hover:text-gray-400 hover:border-gray-400 px-2 py-2 border-2 border-white text-white rounded-xl">
                 More
                 <FontAwesomeIcon icon={faGithub} size="2x" />
               </a>
