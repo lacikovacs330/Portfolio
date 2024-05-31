@@ -59,7 +59,7 @@ function Header() {
 
       {showContactPopup && (
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-80 z-50" onClick={toggleContactPopup}>
-          <div className="w-1/3 bg-white p-8 rounded-lg flex flex-col" onClick={(e) => e.stopPropagation()}>
+          <div className="w-[300px] lg:w-1/3 bg-white p-8 rounded-lg flex flex-col" onClick={(e) => e.stopPropagation()}>
             <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
             <div className='w-full mb-4'>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email:</label>

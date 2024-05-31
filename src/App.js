@@ -27,7 +27,7 @@ function App() {
       <Footer />
       {showScroll && (
         <div
-          className="border-white border-2 fixed bottom-5 right-5 w-10 h-10 bg-black text-white flex justify-center items-center rounded-full cursor-pointer transition-opacity duration-300 z-50 hover:bg-gray-700"
+          className="border-white border-2 fixed bottom-5 right-5 w-10 h-10 bg-black text-white flex justify-center items-center rounded-full cursor-pointer transition-opacity duration-300 z-40 hover:bg-gray-700"
           onClick={scrollTop}
         >
           <FontAwesomeIcon icon={faArrowUp} />

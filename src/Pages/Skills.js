@@ -87,7 +87,7 @@ function Skills() {
         <div className="w-full h-[95%] flex flex-col justify-center items-center">
           {skills.map((skill, index) => (
             <div className='w-full p-2 xl:p-0' key={index}>
-              <div className="text-base font-medium dark:text-white mb-6 mt-2">{skill.name}</div>
+              <div className="text-base font-medium text-white dark:text-white mb-6 mt-2">{skill.name}</div>
               <div className="relative w-full bg-gray-200 rounded-full h-2 mb-4 my-2 dark:bg-white">
                 <div
                   className={`h-2 rounded-full ${skill.color} relative`}
