@@ -51,7 +51,7 @@ function Header() {
         </div>
 
         <div className="block lg:hidden">
-          <button className="text-white focus:outline-none animate-fade-in " onClick={toggleMenu}>
+          <button className="text-white focus:outline-none animate-fade-in" onClick={toggleMenu}>
             <FontAwesomeIcon icon={faBars} />
           </button>
         </div>
